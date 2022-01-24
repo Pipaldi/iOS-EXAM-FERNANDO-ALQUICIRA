@@ -19,20 +19,6 @@ class ChartsCell: UITableViewCell {
     
     // LABELS
     @IBOutlet weak var titleChartLabel: UILabel!
-    @IBOutlet weak var first_subLabel: UILabel!
-    @IBOutlet weak var second_subLabel: UILabel!
-    @IBOutlet weak var third_subLabel: UILabel!
-    @IBOutlet weak var fourth_subLabel: UILabel!
-    @IBOutlet weak var fifth_subLabel: UILabel!
-    @IBOutlet weak var sixth_subLabel: UILabel!
-    
-    // VIEWS
-    @IBOutlet weak var first_view: UIView!
-    @IBOutlet weak var second_view: UIView!
-    @IBOutlet weak var third_view: UIView!
-    @IBOutlet weak var fourth_view: UIView!
-    @IBOutlet weak var fifth_view: UIView!
-    @IBOutlet weak var sixth_view: UIView!
     
     // CHART VIEW
     @IBOutlet weak var pieView: PieChartView!
