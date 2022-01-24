@@ -1,0 +1,6 @@
+framework module Pods_iOS_EXAM_FERNANDO_ALQUICIRA_iOS_EXAM_FERNANDO_ALQUICIRAUITests {
+  umbrella header "Pods-iOS EXAM FERNANDO ALQUICIRA-iOS EXAM FERNANDO ALQUICIRAUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
