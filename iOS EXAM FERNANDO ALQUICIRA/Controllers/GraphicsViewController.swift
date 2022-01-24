@@ -36,7 +36,6 @@ class GraphicsViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         colorRef.observe(.value) { DataSnapshot in
             self.bgColor = DataSnapshot.value as! String
-            print(self.bgColor)
             
         }
     }
