@@ -28,15 +28,12 @@ class GraphicsViewController: UITableViewController {
     
     
     override func viewDidLoad() {
-        print(usuario.nombre!)
-        
         makePOSTRequest()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         colorRef.observe(.value) { DataSnapshot in
             self.bgColor = DataSnapshot.value as! String
-            print(self.bgColor)
             
         }
     }
@@ -104,7 +101,11 @@ class GraphicsViewController: UITableViewController {
     @IBAction func uploadProfile(_ sender: Any) {
         // If profile picture is not avaiable present alert else upload profile to Firestore
         if usuario.foto == nil {
-            alerta = UIAlertController(title: "CREAR PERFIL", message: "Aún no tienes foto de perfil", preferredStyle: .alert)
+            alerta = UIAlertController(title: "CREAR PERFIL", message: "No tienes una foto de perfil", preferredStyle: .alert)
+            alerta.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
+            self.present(alerta, animated: true, completion: nil)
+        } else if usuario.nombre.isEmpty {
+            alerta = UIAlertController(title: "CREAR PERFIL", message: "No tienes un nombre", preferredStyle: .alert)
             alerta.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
             self.present(alerta, animated: true, completion: nil)
         } else {
@@ -113,6 +114,9 @@ class GraphicsViewController: UITableViewController {
                     print("failed to upload")
                     return
                 }
+                self.alerta = UIAlertController(title: "CREAR PERFIL", message: "Se creó exitosamente tu perfil", preferredStyle: .alert)
+                self.alerta.addAction(UIAlertAction(title: "Continuar", style: .default, handler: nil))
+                self.present(self.alerta, animated: true, completion: nil)
             }
         }
     }
