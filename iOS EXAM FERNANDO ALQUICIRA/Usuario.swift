@@ -13,7 +13,7 @@ class Usuario {
     var foto : UIImage?
     
     init() {
-        self.nombre = "John Doe"
+        self.nombre = ""
         self.foto = UIImage(named: "")
     }
     
